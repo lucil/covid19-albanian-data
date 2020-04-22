@@ -83,10 +83,10 @@ const granularData = async () => {
     dates.forEach((date, index) => {
         var day = {
             date: date,
-            active: activeCases[index] - (activeCases[index - 1] ? activeCases[index - 1] : 0),
-            active_cumulative: activeCases[index],
             new_cases: newCases[index],
             cumulative_cases: cumulativeCases[index],
+            active: activeCases[index] - (activeCases[index - 1] ? activeCases[index - 1] : 0),
+            active_cumulative: activeCases[index],
             recovered: recovered[index] - (recovered[index - 1] ? recovered[index - 1] : 0),
             recovered_cumulative: recovered[index],
             deaths: deaths[index] - (deaths[index - 1] ? deaths[index - 1] : 0),
