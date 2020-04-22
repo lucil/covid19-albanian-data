@@ -100,10 +100,10 @@ const granularData = async () => {
     const summary = data.tabs;
 
     const summaryData = [{
-        total_active_cases: summary.raste_aktive,
-        active_cases_yesterday: summary.raste_aktive_dje,
         total_cases: summary.raste_gjithesej,
         total_cases_yesterday: summary.raste_gjithesej_dje,
+        total_active_cases: summary.raste_aktive,
+        active_cases_yesterday: summary.raste_aktive_dje,
         total_recovered: summary.te_sheruar,
         recovered_yesterday: summary.te_sheruar_dje,
         total_deaths: summary.te_vdekur,
