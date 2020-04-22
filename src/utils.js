@@ -10,7 +10,7 @@ const getData = async urlSlug => {
     try {
         const response = await fetch(url);
         const json = await response.json();
-        return json
+        return json;
     } catch (error) {
         console.log(error);
     }
@@ -22,6 +22,7 @@ const writeCsv = async (data, fileName) => {
     //create execution date folder
     const dataDir = './data/' + format(date, 'yyyy-MM-dd') + '/';
     fs.promises.mkdir(dataDir, { recursive: true }).catch(console.error);
+    //write file
     const ws = fs.createWriteStream(dataDir + fileName);
     fastcsv.write(data, { headers: true }).pipe(ws);
 }

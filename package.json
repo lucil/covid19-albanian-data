@@ -1,5 +1,5 @@
 {
-  "name": "Covid19-Data-Albania",
+  "name": "Covid19-Albania-Data",
   "version": "1.0.0",
   "description": "Covid 19 data from coronavirus.al",
   "main": "data-import.js",

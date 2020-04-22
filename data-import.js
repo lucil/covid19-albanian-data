@@ -20,7 +20,7 @@ exportData.districtSummary();
 //import stats
 exportData.granularData();
 
-//writes the last update datetime
+//write the last update datetime
 fs.writeFile('last_update.txt', (new Date()).toISOString(), function (err) {
     if (err)
         return console.log(err);
