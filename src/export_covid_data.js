@@ -16,7 +16,7 @@ const agePercent = async () => {
     const data = await utils.getData('columnCharts.php');
     const mappedData = data.aktiv_grupmoshe.map(x => {
         return {
-            gender: x.name,
+            age: x.name,
             percent_value: x.y
         };
     });
@@ -28,7 +28,7 @@ const recoveredAgePercent = async () => {
     const data = await utils.getData('columnCharts.php');
     const mappedData = data.sheruar_grupmoshe.map(x => {
         return {
-            gender: x.name,
+            age: x.name,
             percent_value: x.y
         };
     });
@@ -40,7 +40,7 @@ const recoveredDistrictPercent = async () => {
     const data = await utils.getData('columnCharts.php');
     const mappedData = data.sheruar_vendbanim.map(x => {
         return {
-            gender: x.name,
+            district: x.name,
             percent_value: x.y
         };
     });
@@ -95,7 +95,7 @@ const granularData = async () => {
         mappedData.push(day);
     });
 
-    utils.writeCsv(mappedData, 'granular_data.csv');
+    utils.writeCsv(mappedData, 'daily_data.csv');
 
     const summary = data.tabs;
 
