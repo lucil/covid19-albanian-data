@@ -6,15 +6,13 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/15 * * * *'
+    - cron:  '0 0 12 * * ?'
 
 jobs:
-  build:
-
+  install_dependencies:
+    name: Install dependencies
     runs-on: ubuntu-latest
 
     strategy:
@@ -28,6 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: node data-import.js
+    - run: node data-import.js   
       env:
         CI: true
+    - name: Push new files back to master.
+    - uses: mikeal/publish-to-github-action@1.0.0
+      env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
