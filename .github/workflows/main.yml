@@ -12,7 +12,7 @@ on:
 
 jobs:
   job_1:
-    name: Install dependencies
+    name: Run data import
     runs-on: ubuntu-latest
 
     strategy:
@@ -32,13 +32,3 @@ jobs:
     - uses: mikeal/publish-to-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  job_2:
-    name: Push data files to master
-    runs-on: ubuntu-latest
-    needs: job_1
-    steps:
-    - uses: mikeal/publish-to-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     
