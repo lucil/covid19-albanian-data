@@ -1,3 +1,5 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/lucil/covid19-albanian-data)
+
 # 2019 Novel Coronavirus COVID-19 (2019-nCoV) Albanian Data Repository 
 
 
