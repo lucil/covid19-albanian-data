@@ -29,9 +29,8 @@ jobs:
     - run: node data-import.js   
       env:
         CI: true
-
-  push:    
-    - name: Push new files back to master.
+  push_to_master:
     - uses: mikeal/publish-to-github-action@1.0.0
+    - name: Push data files to master    
       env:
         CI: true
