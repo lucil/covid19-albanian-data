@@ -29,6 +29,9 @@ jobs:
     - run: node data-import.js   
       env:
         CI: true
+    \\\- uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   job_2:
     name: Push data files to master
