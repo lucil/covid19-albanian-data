@@ -31,7 +31,7 @@ jobs:
         CI: true
 
   job_2:
-    - uses: mikeal/publish-to-github-action@master
+    - uses: actions/checkout@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - needs: job_1
