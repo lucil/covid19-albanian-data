@@ -11,7 +11,7 @@ on:
     - cron:  '0 12 * * *'
 
 jobs:
-  install_dependencies:
+  job_1:
     name: Install dependencies
     runs-on: ubuntu-latest
 
@@ -29,8 +29,10 @@ jobs:
     - run: node data-import.js   
       env:
         CI: true
-  push_to_master:
-    - uses: mikeal/publish-to-github-action@1.0.0
-    - name: Push data files to master    
+
+  job_2:
+    - uses: mikeal/publish-to-github-action@master
       env:
-        CI: true
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - needs: job_1
+    - name: Push data files to master 
