@@ -31,8 +31,11 @@ jobs:
         CI: true
 
   job_2:
-    - uses: actions/checkout@v2
+    name: Push data files to master
+    runs-on: ubuntu-latest
+    needs: job_1
+    steps:
+    - uses: mikeal/publish-to-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - needs: job_1
-    - name: Push data files to master 
+     
